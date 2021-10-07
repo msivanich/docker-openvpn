@@ -143,7 +143,7 @@ if [ -z "${EASYRSA_PKI:-}" ]; then
 fi
 
 OVPN_AUTH=''
-OVPN_CIPHER=''
+[ -n "$OVPN_CIPHER" ] && OVPN_CIPHER=''
 OVPN_CLIENT_TO_CLIENT=''
 OVPN_CN=''
 OVPN_COMP_LZO=0
@@ -165,7 +165,7 @@ OVPN_PROTO=''
 OVPN_PUSH=()
 OVPN_ROUTES=()
 OVPN_SERVER=192.168.255.0/24
-OVPN_SERVER_URL=''
+[ -n "$OVPN_SERVER_URL" ] && OVPN_SERVER_URL=''
 OVPN_TLS_CIPHER=''
 
 # Import existing configuration if present
